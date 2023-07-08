@@ -100,9 +100,11 @@ public class BookingController {
         } catch (Exception e) {
 
             /* 예약 실패시 사용자에게 보여줄 메시지 */
-            msg = "예약 실패하였습니다." + e.getMessage();
+            msg = "예약 실패하였습니다.";
             log.info(e.toString());
             e.printStackTrace();
+
+
 
         } finally {
             model.addAttribute("msg", msg);
@@ -113,7 +115,7 @@ public class BookingController {
 
         }
 
-        return "/siso/booking";
+        return "/redirect";
 
     }
 }
