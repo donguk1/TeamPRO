@@ -4,10 +4,12 @@ import kopo.poly.dto.BookingDTO;
 import kopo.poly.service.IBookingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.Request;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -92,7 +94,7 @@ public class BookingController {
             BookingService.insertBooking(pDTO);
 
             msg = "예약 되었습니다.";
-            url = "main";
+            url = "/siso/booking";
 
 
         } catch (Exception e) {
@@ -111,7 +113,7 @@ public class BookingController {
 
         }
 
-        return "/redirect";
+        return "/siso/booking";
 
     }
 }
