@@ -112,5 +112,17 @@ public class UserInfoService implements IUserInfoService {
 
         return rDTO;
     }
+
+    @Override
+    public int newPasswordProc(UserInfoDTO pDTO) throws Exception {
+        return 0;
+    }
+
+    @Override
+    public UserInfoDTO searchUserIdOrPasswordProc(UserInfoDTO pDTO) throws Exception {
+        return null;
+
+
+    }
 }
 
