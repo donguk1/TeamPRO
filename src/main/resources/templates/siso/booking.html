@@ -18,14 +18,25 @@
     </style>
 
     <title>Booking</title>
+
+    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+
+        // 예약 저장하기
+        function doSubmit() {
+
+            let f = document.getElementById("booking"); // form 태그
+
+        }
+    </script>
 </head>
 
 <body>
 
-    <form name="booking" method="post" action="">
+<form action="/siso/bookingInsert" method="post" onsubmit="doSubmit()" name="booking" id="booking">
         <fieldset>
             <legend> 예약자(대표) 정보 </legend>
-            <label for="same">&nbsp;회원정보와 동일시 체크 : </label> <input type="radio" name="check" id="same" value="same" checked><br>
+            <label for="same">&nbsp;회원정보와 동일시 체크 : </label> <input type="radio" name="same" value="Y" checked><br>
             <label for="name">- 이름 : </label>
             <input type="text" placeholder="홍길동" name="name_"><br>
             <label for="phone">- 전화번호 : </label>
@@ -37,12 +48,12 @@
         <fieldset>
             <legend> 여행 예약 정보 </legend>
             <label for="date">- 예약일 : </label>
-            <input type="date" name="date_"> ~ <input type="date" name="date_2"><br>
+            <input type="date" name="start_date"> ~ <input type="date" name="last_date"><br>
             <label for="stay">- 숙소 타입 : </label>
-            <input type="checkbox" name="stay" value="airbnb">에어비앤비&nbsp;&nbsp;
-            <input type="checkbox" name="stay" value="hotel">호텔&nbsp;&nbsp;
-            <input type="checkbox" name="stay" value="resort">리조트
-            <input type="checkbox" name="stay" value="resort">숙박안함 <br>
+            <input type="checkbox" name="stay" value="1">에어비앤비&nbsp;&nbsp;
+            <input type="checkbox" name="stay" value="2">호텔&nbsp;&nbsp;
+            <input type="checkbox" name="stay" value="3">리조트
+            <input type="checkbox" name="stay" value="4">숙박안함 <br>
             <label for="room">- 방 개수 : <input type="number" min="1" id="room">&nbsp;&nbsp;<label for="upgrade">( 업그레이드 여부 <input type="radio" name="up" id="upgrade" value="upgrade"> )</label></label><br>
             <label for="total">- 예약 인원 : </label> <input type="number" min="1" id="number"><br>
             <label for="place">- 여행지 :</label>

@@ -4,32 +4,32 @@
 <mapper namespace="kopo.poly.persistance.mapper.IBookingMapper">
     <!--  예약 하기  -->
     <insert id="insertBooking" parameterType="BookingDTO">
-        INSERT INTO SISO (
+        INSERT INTO BOOKING (
             SAME,
-            USER_NAME,
+            BOOKING_NAME,
             TEL,
-            USER_EMAIL,
+            BOOKING_EMAIL,
             START_DATE,
             LAST_DATE,
             STAY,
             ROOM,
             PERSON,
             LOCAL,
-            FOREIGN,
+            FOREIGNN,
             WANT
             )
         VALUES (
            #{same},
-           #{user_name},
+           #{booking_name},
            #{tel},
-           #{user_email},
+           #{booking_email},
            #{start_date},
            #{last_date},
            #{stay},
            #{room},
            #{person},
            #{local},
-           #{foreign},
+           #{foreignn},
            #{want}
                )
     </insert>
