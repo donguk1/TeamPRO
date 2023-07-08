@@ -237,4 +237,19 @@ public class UserInfoController {
 
         return rDTO;
     }
+
+    // 아이디 찾기 화면 불러오기
+    @GetMapping(value ="/user/searchUserId")
+    public String searchUserId() {
+        log.info(this.getClass().getName() + "아이디찾기 화면 불러오기");
+
+        return "/user/searchUserId";
+    }
+
+    @GetMapping(value ="/user/searchPassword")
+    public String searchPassword() {
+        log.info(this.getClass().getName() + "비밀번호찾기 화면 불러오기");
+
+        return "/user/searchPassword";
+    }
 }

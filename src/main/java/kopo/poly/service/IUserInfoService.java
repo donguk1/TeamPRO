@@ -19,9 +19,9 @@ public interface IUserInfoService {
     // 함수를 추가(반환타입 UserInfoDTO 매개변수명 pDTO)
     UserInfoDTO getLogin(UserInfoDTO pDTO) throws Exception;
 
-    /*// 아이디, 비밀번호 찾기에 활용
+    // 아이디, 비밀번호 찾기에 활용
     UserInfoDTO searchUserIdOrPasswordProc(UserInfoDTO pDTO) throws Exception;
 
     // 비밀번호 재설정
-    int newPasswordProc(UserInfoDTO pDTO) throws Exception;*/
+    int newPasswordProc(UserInfoDTO pDTO) throws Exception;
 }
