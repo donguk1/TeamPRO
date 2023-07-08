@@ -45,7 +45,9 @@
             <!--공지글이 아니라면, 글번호 보여주기-->
             <div class="divTableCell" th:unless="${dto.notice_yn=='Y'}">[[${dto.notice_seq}]]</div>
             <div class="divTableCell"
-                 th:attr="onclick='doDetail(\'' + ${dto.notice_seq} + '\')'">[[${dto.title}]]
+                 th:attr="onclick='doDetail(\'' + ${dto.notice_seq} + '\')'"
+                 onmouseover="this.style.fontWeight='bold'; this.style.textDecoration='underline'"
+                 onmouseout="this.style.fontWeight='normal'; this.style.textDecoration='none'">[[${dto.title}]]
             </div>
             <div class="divTableCell">[[${dto.read_cnt}]]
             </div>
