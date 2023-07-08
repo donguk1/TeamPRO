@@ -16,8 +16,8 @@
             PERSON,
             LOCAL,
             FOREIGN,
-            WANT,
-            USER_ID)
+            WANT
+            )
         VALUES (
            #{same},
            #{user_name},
@@ -30,8 +30,7 @@
            #{person},
            #{local},
            #{foreign},
-           #{want},
-           #{user_id}
+           #{want}
                )
     </insert>
 
