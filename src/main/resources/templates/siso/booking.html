@@ -25,7 +25,7 @@
         // 예약 저장하기
         function doSubmit() {
 
-            let f = document.getElementById("booking"); // form 태그
+            let booking = document.getElementById("booking"); // form 태그
 
         }
     </script>
@@ -54,17 +54,17 @@
         <input type="checkbox" name="stay" value="2">호텔&nbsp;&nbsp;
         <input type="checkbox" name="stay" value="3">리조트
         <input type="checkbox" name="stay" value="4">숙박안함 <br>
-        <label for="room">- 방 개수 : <input type="number" min="1" name="room">&nbsp;&nbsp;<label for="upgrade">( 업그레이드 여부 <input type="radio" name="up" id="upgrade" value="upgrade"> )</label></label><br>
+        <label for="room">- 방 개수 : <input type="number" min="1" name="room">&nbsp;&nbsp;</label><br>
         <label for="person">- 예약 인원 : </label> <input type="number" min="1" name="person"><br>
         <label for="place">- 여행지 :</label>
-        <input type="text" list="local" placeholder="국내 여행지 선택">
+        <input type="text" list="local" name="local" placeholder="국내 여행지 선택">
         <datalist id="local">
             <option value="경상북도" label="인당 \ 200,000부터" />
             <option value="강원도" label="인당 \ 250,000부터" />
             <option value="제주도" label="인당 \ 350,000부터" />
         </datalist>
-        <input type="text" list="foreign" placeholder="해외 여행지 선택">
-        <datalist id="foreign">
+        <input type="text" list="foreignn" name="foreignn" placeholder="해외 여행지 선택">
+        <datalist id="foreignn">
             <option value="베트남" label="인당 \ 500,000부터" />
             <option value="태국" label="인당 \ 600,000부터" />
             <option value="필리핀" label="인당 \ 550,000부터" />
