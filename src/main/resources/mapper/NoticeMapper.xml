@@ -13,7 +13,7 @@
                USER_ID,
                TO_CHAR(REG_DT, 'YYYY-MM-DD') AS REG_DT
         FROM NOTICE
-        ORDER BY REG_DT DESC, NOTICE_YN DESC
+        ORDER BY CASE WHEN NOTICE_YN = '공지' THEN 0 ELSE 1 END, NOTICE_SEQ DESC
     </select>
 
 
