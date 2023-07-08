@@ -13,7 +13,7 @@
                USER_ID,
                TO_CHAR(REG_DT, 'YYYY-MM-DD') AS REG_DT
         FROM NOTICE
-        ORDER BY NOTICE_YN DESC, REG_DT ASC
+        ORDER BY REG_DT DESC, NOTICE_YN DESC
     </select>
 
 
