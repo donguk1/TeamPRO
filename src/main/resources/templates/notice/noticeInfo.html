@@ -72,23 +72,14 @@
         <div class="divTableRow">
             <div class="divTableCell">제목
             </div>
-            <div class="divTableCell" th:if="${dto.notice_yn=='Y'}">[공지] [[${rDTO.title}]]
-                                    <!-- 공지글 등록이 '예'라면 제목 앞부분에 '[공지]'가 붙여짐 -->
+            <!-- 공지글 여부가 '예'라면 제목 앞부분에 '[공지]'가 추가돼서 출력됨 -->
+            <div class="divTableCell" th:if="${rDTO.notice_yn=='Y'}"><strong>[공지]</strong>
+                [[${rDTO.title}]]
             </div>
-<!--            <div class="divTableCell">[[${rDTO.title}]]
-            </div>-->
-        </div>
-<!--        <div class="divTableRow">
-            <div class="divTableCell">공지글 여부
+            <!-- 공지글 여부가 '아니오'라면 그냥 제목만 출력됨 -->
+            <div class="divTableCell" th:if="${rDTO.notice_yn=='N'}">[[${rDTO.title}]]
             </div>
-            <div class="divTableCell">
-                예<input type="radio" name="notice_yn"
-                        value="Y" th:checked="${rDTO.notice_yn == 'Y'}" />
-
-                아니오<input type="radio" name="notice_yn"
-                          value="N" th:checked="${rDTO.notice_yn == 'N'}"/>
         </div>
-        </div>-->
         <div class="divTableRow">
             <div class="divTableCell">작성일
             </div>
