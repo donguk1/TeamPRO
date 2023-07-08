@@ -8,14 +8,14 @@ import lombok.Setter;
 @Setter
 public class NoticeDTO {
 
-    private String notice_seq;
-    private String title;
-    private String notice_yn;
-    private String contents;
-    private String user_id;
-    private String read_cnt;
-    private String reg_id;
-    private String reg_dt;
-    private String chg_id;
-    private String chg_dt;
+    private String notice_seq;  // 순번(기본키)
+    private String title;       // 제목
+    private String notice_yn;   // 공지 여부
+    private String contents;    // 내용
+    private String user_id;     // 작성자
+    private String read_cnt;    // 조회수
+    private String reg_id;      // 등록자
+    private String reg_dt;      // 등록일
+    private String chg_id;      // 수정자
+    private String chg_dt;      // 수정일
 }

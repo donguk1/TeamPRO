@@ -31,6 +31,8 @@ public class BookingController {
         return "/siso/booking";
     }
 
+
+    /* 예약 내용 추가 */
     @PostMapping(value = "/siso/bookingInsert")
     public String bookingInsert(HttpServletRequest request, ModelMap model, HttpSession session) {
 
@@ -39,7 +41,7 @@ public class BookingController {
 
         String msg = "";
         String url = "/siso/booking";
-        
+
         try {
             /* 데이터 입력 */
             String same = kopo.poly.Util.CmmUtil.nvl(request.getParameter("same"));
@@ -72,6 +74,7 @@ public class BookingController {
             log.info("want : " + want);
             log.info("user_id : " + user_id);
 
+            /* 예약 정보 삽입 종료 로그 */
             log.info(this.getClass().getName() + ".getInsertBooking End!");
             log.info("예약 정보 작성 종료");
 
@@ -102,6 +105,9 @@ public class BookingController {
 
             /* 예약 실패시 사용자에게 보여줄 메시지 */
             msg = "예약 실패하였습니다." + e.getMessage();
+
+            /* 예약 실패 로그*/
+            log.info("예약실패 로그");
             log.info(e.toString());
             e.printStackTrace();
 
