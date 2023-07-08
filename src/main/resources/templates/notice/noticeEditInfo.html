@@ -92,13 +92,12 @@
                     <!-- 기존에 작성한 제목이 텍스트창 안에 남아있도록 수정 -->
                     <input type="text" name="title" maxlength="100" th:value="${rDTO.title}"
                            style="width: 95%" />
-                    <!-- 텍스트창 안에 기존 title 이 남아있게 수정봐야함 -->
                 </div>
             </div>
             <div class="divTableRow">
                 <div class="divTableCell">공지글 여부
                 </div>
-                <div class="divTableCell">
+                <div class="divTableCell" style="text-align: left">
                     예<input type="radio" name="notice_yn"
                             value="Y" th:checked="${rDTO.notice_yn == 'Y'}" />
 
@@ -119,7 +118,7 @@
     <div>
         <button id="btnSend" type="submit">수정</button>
         <button type="reset">다시 작성</button>
-        <button id="btnList" type="button">목록으로</button>
+        <button id="btnList" type="button">목록</button>
     </div>
 </form>
 </body>
