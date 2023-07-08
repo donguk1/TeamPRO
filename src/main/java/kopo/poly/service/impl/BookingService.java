@@ -27,38 +27,7 @@ public class BookingService implements IBookingService {
 
 
 
-//        /* 데이터 입력 */
-//        String same = CmmUtil.nvl(pDTO.getSame());
-//        String user_name = CmmUtil.nvl(pDTO.getUser_name());
-//        String tel = CmmUtil.nvl(pDTO.getTel());
-//        String user_email = CmmUtil.nvl(pDTO.getUser_email());
-//        String start_date = CmmUtil.nvl(pDTO.getStart_date());
-//        String last_date = CmmUtil.nvl(pDTO.getLast_date());
-//        String stay = CmmUtil.nvl(pDTO.getStay());
-//        String room = CmmUtil.nvl(pDTO.getRoom());
-//        String person = CmmUtil.nvl(pDTO.getPerson());
-//        String local = CmmUtil.nvl(pDTO.getLocal());
-//        String foreign = CmmUtil.nvl(pDTO.getForeign());
-//        String want = CmmUtil.nvl(pDTO.getWant());
-//        String user_id = CmmUtil.nvl(pDTO.getUser_id());
-//
-//        /* 데이터 입력 확인용 로그 */
-//        log.info("same : " + same);
-//        log.info("user_name : " + user_name);
-//        log.info("tel : " + tel);
-//        log.info("user_email : " + user_email);
-//        log.info("start_date : " + start_date);
-//        log.info("last_date : " + last_date);
-//        log.info("stay : " + stay);
-//        log.info("room : " + room);
-//        log.info("person : " + person);
-//        log.info("local : " + local);
-//        log.info("foreign : " + foreign);
-//        log.info("want : " + want);
-//        log.info("user_id : " + user_id);
-//
-//        log.info(this.getClass().getName() + ".getInsertBooking End!");
-//        log.info("예약 정보 작성 종료");
+
 
 
     }

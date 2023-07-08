@@ -14,11 +14,11 @@ public class MainController {
         return "/main";
     }
 
-    @GetMapping("/siso/booking")
-    public String booking() throws Exception {
-        log.info(this.getClass().getName() + ".booking 페이지 보여주는 함수 실행");
-        return "siso/booking";
-    }
+//    @GetMapping("/siso/booking")
+//    public String booking() throws Exception {
+//        log.info(this.getClass().getName() + ".booking 페이지 보여주는 함수 실행");
+//        return "siso/booking";
+//    }
 
     @GetMapping("/siso/local")
     public String local() throws Exception {
@@ -38,10 +38,4 @@ public class MainController {
         return "siso/photo";
     }
 
-    // ##이것만 하면 오류남##
-//    @GetMapping("/notice/noticeList")
-//    public String noticeList() throws Exception {
-//        log.info(this.getClass().getName() + ".noticeList 페이지 보여주는 함수 실행");
-//        return "notice/noticeList";
-//    }
 }
