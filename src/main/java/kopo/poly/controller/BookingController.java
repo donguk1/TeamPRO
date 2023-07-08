@@ -104,6 +104,8 @@ public class BookingController {
             log.info(e.toString());
             e.printStackTrace();
 
+
+
         } finally {
             model.addAttribute("msg", msg);
             model.addAttribute("url", url);
