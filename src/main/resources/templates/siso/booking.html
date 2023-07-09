@@ -28,6 +28,56 @@
             let booking = document.getElementById("booking"); // form 태그
 
         }
+
+        // 예약자(대표) 정보 입력 폼의 요소들을 가져오는 함수
+        function getBookingFormElements() {
+            return {
+                bookingName: document.getElementsByName("booking_name")[0],
+                tel: document.getElementsByName("tel")[0],
+                bookingEmail: document.getElementsByName("booking_email")[0]
+            };
+        }
+
+        // 회원정보와 동일시 체크박스의 이벤트 핸들러
+        function handleSameCheckbox() {
+            const sameCheckbox = document.getElementsByName("same")[0];
+            const bookingFormElements = getBookingFormElements();
+
+            // 체크박스가 체크되면 로그인된 사용자 정보를 폼 요소에 채움
+            sameCheckbox.addEventListener("change", function () {
+                if (sameCheckbox.checked) {
+                    // 로그인된 사용자의 정보를 가져와서 폼 요소에 채움
+                    const user = getUserInfo(); // 로그인된 사용자 정보를 가져오는 함수
+                    bookingFormElements.bookingName.value = user.name;
+                    bookingFormElements.tel.value = user.tel;
+                    bookingFormElements.bookingEmail.value = user.email;
+                } else {
+                    // 체크박스가 체크 해제되면 폼 요소를 초기화
+                    bookingFormElements.bookingName.value = "";
+                    bookingFormElements.tel.value = "";
+                    bookingFormElements.bookingEmail.value = "";
+                }
+            });
+        }
+
+        // 임의의 로그인된 사용자 정보를 가져오는 함수
+        function getUserInfo() {
+            // 여기에 실제로 로그인된 사용자 정보를 가져와서 반환하는 로직을 구현해야 함!!!!!!!!!!
+            return {
+                name: "John Doe",
+                tel: "123-4567-8901",
+                email: "john.doe@example.com"
+            };
+        }
+
+        // 페이지 로드 시 호출되는 함수
+        function initialize() {
+            handleSameCheckbox();
+        }
+
+        // 페이지 로드 완료 시 initialize 함수 호출
+        window.addEventListener("load", initialize);
+
     </script>
 </head>
 
@@ -36,7 +86,7 @@
 <form action="/siso/bookingInsert" method="post" onsubmit="doSubmit()" name="booking" id="booking">
     <fieldset>
         <legend> 예약자(대표) 정보 </legend>
-        <label for="same">&nbsp;회원정보와 동일시 체크 : </label> <input type="checkbox" name="same" value="Y" checked><br>
+        <label for="same">&nbsp;회원정보와 동일시 체크 : </label> <input type="checkbox" name="same" value="Y"><br>
         <label for="booking_name">- 이름 : </label>
         <input type="text" placeholder="홍길동" name="booking_name"><br>
         <label for="tel">- 전화번호 : </label>
@@ -80,5 +130,7 @@
     <br>
     <br>
 </form>
-
+<script type="text/javascript">
+    initialize();
+</script>
 </body></html>

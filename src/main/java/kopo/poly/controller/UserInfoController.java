@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -23,11 +24,11 @@ public class UserInfoController {
     private final IUserInfoService userInfoService; // 서비스를 안에서 사용할 수 있게 하는 선언문
 
     /* 회원가입 화면으로 이동 */
-    @GetMapping(value ="/user/join")  // "/user/userRegForm" 기존꺼 주석처리
+    @GetMapping(value = "/user/join")
     public String userRegForm() {
-        log.info(this.getClass().getName() + ".user/join"); // ".user/userRegForm" 기존꺼 주석처리
+        log.info(this.getClass().getName() + ".user/join");
 
-        return "/user/join"; // "/user/userRegForm"; 기존꺼 주석처리
+        return "/user/join";
     }
 
 
@@ -187,8 +188,6 @@ public class UserInfoController {
     }
 
 
-
-
     // 회원가입 전 아이디 중복체크하기 (Ajax 를 통해 입력한 아이디 정보 받음)
     @ResponseBody
     @PostMapping(value = "/user/getUserIdExists")
@@ -211,7 +210,6 @@ public class UserInfoController {
 
         return rDTO;
     }
-
 
 
     // 회원가입 전 이메일 중복체크하기 (Ajax 를 통해 입력한 아이디 정보 받음)
@@ -239,14 +237,14 @@ public class UserInfoController {
     }
 
     // 아이디 찾기 화면 불러오기
-    @GetMapping(value ="/user/searchUserId")
+    @GetMapping(value = "/user/searchUserId")
     public String searchUserId() {
         log.info(this.getClass().getName() + "아이디찾기 화면 불러오기");
 
         return "/user/searchUserId";
     }
 
-    @GetMapping(value ="/user/searchPassword")
+    @GetMapping(value = "/user/searchPassword")
     public String searchPassword() {
         log.info(this.getClass().getName() + "비밀번호찾기 화면 불러오기");
 
