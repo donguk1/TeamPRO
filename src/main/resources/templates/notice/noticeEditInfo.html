@@ -51,18 +51,20 @@
                 f.title.focus();
                 return;
             }
-            let noticeCheck = false; //체크 여부 확인 변수
+            /*let noticeCheck = false; //체크 여부 확인 변수 ## 필요없어서 주석처리 ## */
             for (let i = 0; i < f.notice_yn.length; i++) {
+
                 if (f.notice_yn[i].checked) {
                     noticeCheck = true;
                     break;
                 }
             }
-            if (noticeCheck === false) {
+            // ## 필요 없어서 주석처리 ##
+            /*if (noticeCheck === false) {
                 alert("공지글 여부를 선택하시기 바랍니다.");
                 f.notice_yn[0].focus();
                 return;
-            }
+            }*/
             if (f.contents.value === "") {
                 alert("내용을 입력하시기 바랍니다.");
                 f.contents.focus();
