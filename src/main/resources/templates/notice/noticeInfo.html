@@ -77,7 +77,7 @@
                 [[${rDTO.title}]]
             </div>
             <!-- 공지글 여부가 '아니오'라면 그냥 제목만 출력됨 -->
-            <div class="divTableCell" style="text-align: left" th:if="${rDTO.notice_yn=='N'}">[[${rDTO.title}]]
+            <div class="divTableCell" style="text-align: left" th:if="${rDTO.notice_yn!='Y'}">[[${rDTO.title}]]
             </div>
         </div>
         <div class="divTableRow">
