@@ -88,12 +88,12 @@
     <div class="divTable minimalistBlack" style="text-align: center">
         <div class="divTableBody">
             <div class="divTableRow">
-                <div class="divTableCell">제목
+                <div class="divTableCell" style="width: 15%">제목
                 </div>
                 <div class="divTableCell">
                     <!-- 기존에 작성한 제목이 텍스트창 안에 남아있도록 수정 -->
                     <input type="text" name="title" maxlength="100" th:value="${rDTO.title}"
-                           style="width: 95%" />
+                           style="width: 98%" />
                 </div>
             </div>
             <div class="divTableRow">
@@ -110,7 +110,7 @@
                 </div>
                 <div class="divTableCell">
                     <textarea name="contents"
-                              style="width: 95%; height: 400px">[[${rDTO.contents}]]</textarea>
+                              style="width: 98%; height: 400px">[[${rDTO.contents}]]</textarea>
                 </div>
             </div>
         </div>
