@@ -93,14 +93,14 @@ public class BookingController {
             /* 예약하기 위한 비즈니스 로직 호출 */
             BookingService.insertBooking(pDTO);
 
-            msg = "예약 되었습니다.";
+            msg = "접수되었습니다.";
             url = "/siso/booking";
 
 
         } catch (Exception e) {
 
             /* 예약 실패시 사용자에게 보여줄 메시지 */
-            msg = "예약 실패하였습니다.";
+            msg = "예약 접수가 실패하였습니다.";
             log.info(e.toString());
             e.printStackTrace();
 
