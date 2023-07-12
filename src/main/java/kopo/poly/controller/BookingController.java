@@ -4,12 +4,10 @@ import kopo.poly.dto.BookingDTO;
 import kopo.poly.service.IBookingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.coyote.Request;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -43,6 +41,7 @@ public class BookingController {
         
         try {
             /* 데이터 입력 */
+            String user_id = kopo.poly.Util.CmmUtil.nvl((String) session.getAttribute("SS_USER_ID")); // 로그인 된 사용자 아이디 가져오기
             String same = kopo.poly.Util.CmmUtil.nvl(request.getParameter("same"));
             String booking_name = kopo.poly.Util.CmmUtil.nvl(request.getParameter("booking_name"));
             String tel = kopo.poly.Util.CmmUtil.nvl(request.getParameter("tel"));
@@ -59,6 +58,7 @@ public class BookingController {
 
 
             /* 데이터 입력 확인용 로그 */
+            log.info("session user_id : " + user_id);
             log.info("same : " + same);
             log.info("booking_name : " + booking_name);
             log.info("tel : " + tel);
@@ -77,6 +77,7 @@ public class BookingController {
 
             /* 데이터 저장하기 위해 DTO에 저장하기 */
             BookingDTO pDTO = new BookingDTO();
+            pDTO.setUser_id(user_id); // 작성자 추가함
             pDTO.setSame(same);
             pDTO.setBooking_name(booking_name);
             pDTO.setTel(tel);

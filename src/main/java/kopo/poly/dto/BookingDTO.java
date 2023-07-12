@@ -6,6 +6,8 @@ import lombok.Setter;
 @Setter
 @Getter
 public class BookingDTO {
+
+    private String user_id;     // 작성자 추가함
     private String same;        // 회원정보 동일 체크
     private String booking_name;   // 이름
     private String tel;         // 전화번호
