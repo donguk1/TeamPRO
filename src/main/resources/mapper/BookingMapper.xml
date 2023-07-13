@@ -34,5 +34,12 @@
                )
     </insert>
 
+    <!-- USER_INFO 테이블 조회 하기 -->
+    <select id="selectUser_info" parameterType="BookingDTO">
+        SELECT USER_NAME, TEL, EMAIL
+        FROM USER_INFO
+        WHERE USER_ID = #{user_id};
+    </select>
+
 
 </mapper>
