@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -17,7 +19,7 @@ public class BookingService implements IBookingService {
 
     @Transactional
     @Override
-    public void insertBooking(BookingDTO pDTO) throws Exception {
+    public void insertBooking(BookingDTO pDTO) throws Exception { // 예약하기
 
         /* 함수 접근 확인용 로그 */
         log.info(this.getClass().getName() + ".getInsertBooking Start!");
@@ -25,10 +27,12 @@ public class BookingService implements IBookingService {
 
         bookingMapper.insertBooking(pDTO);
 
+    }
 
 
-
-
-
+    @Override
+    public List<BookingDTO> getBookingList() throws Exception { // 예약리스트
+        log.info(this.getClass().getName() + ".getBookingList start!");
+        return bookingMapper.getBookingList();
     }
 }

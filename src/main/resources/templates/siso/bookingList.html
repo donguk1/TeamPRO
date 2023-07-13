@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>예약 리스트</title>
+    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+
+        // HTML로딩이 완료되고, 실행됨
+        $(document).ready(function () {
+
+            // 버튼 클릭했을때, 발생되는 이벤트 생성함(onclick 이벤트와 동일함)
+            $("#btnReg").on("click", function () {
+                location.href = "/siso/booking"; // 예약하는 창으로 이동
+            })
+        })
+
+        // 예약 상세보기 이동
+        function doDetail(seq) {
+            location.href = "/booking/bookingInfo?nSeq=" + seq;
+        }
+
+    </script>
+</head>
+<body>
+<div>
+<h2>나의 예약 리스트
+    <button id="btnReg" type="button" style="display: inline-block; margin: 22px 5px 0; float: right;">예약 화면</button>
+</h2>
+</div>
+<hr/>
+<br/>
+<div class="divTable minimalistBlack" style="text-align: center">
+    <div class="divTableHeading">
+        <div class="divTableRow" style="text-align: center">
+            <div class="divTableHead" style="text-align: center">순번</div>
+            <div class="divTableHead" style="text-align: center">예약번호</div>
+            <div class="divTableHead" style="text-align: center">등록자</div>
+            <div class="divTableHead" style="text-align: center">등록일</div>
+        </div>
+    </div>
+    <div class="divTableBody">
+
+        <div class="divTableRow" th:each="dto:${rList}">
+
+            <div class="divTableCell"
+                 th:attr="onclick='doDetail(\'' + ${dto.booking_name} + '\')'"
+                 onmouseover="this.style.fontWeight='bold'; this.style.textDecoration='underline'"
+                 onmouseout="this.style.fontWeight='normal'; this.style.textDecoration='none'">
+
+            <div class="divTableCell">[[${dto.user_id}]]
+
+        </div>
+    </div>
+</div>
+
+<div>
+    <br>
+
+</div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 package kopo.poly.controller;
 
 import kopo.poly.dto.BookingDTO;
+import kopo.poly.dto.NoticeDTO;
 import kopo.poly.service.IBookingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -118,6 +121,28 @@ public class BookingController {
 
         return "/redirect";
 
+    }
+
+
+    // 예약 리스트 보여주기
+    @GetMapping(value = "/siso/bookingList")
+    public String bookingList(ModelMap model) throws Exception {
+
+        // 로그 찍기
+        log.info(this.getClass().getName() + ".bookingList 페이지 보여주는 함수 실행");
+
+        // 예약 리스트 조회하기
+        List<BookingDTO> rList = BookingService.getBookingList();
+        if (rList == null) rList = new ArrayList<>();
+
+        // 조회된 리스트 결과값 넣어주기
+        model.addAttribute("rList", rList);
+
+        // 로그 찍기
+        log.info(this.getClass().getName() + ".bookingList 페이지 보여주는 함수 끝");
+
+        // 함수 처리가 끝나고 보여줄 html 파일명
+        return "/siso/bookingList";
     }
 }
 
