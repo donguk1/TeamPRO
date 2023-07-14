@@ -9,11 +9,8 @@
         // Controller에서 받은 세션에 저장된 값
         const SS_USER_ID = [[${session.SS_USER_ID}]];
 
-        // 공지사항 게시글 작성자 아이디
+        // 예약 작성자 아이디
         const user_id = [[${rDTO.user_id}]];
-
-        // 현재 글번호, 자바에서 받을 변수들은 자바스크립트 변수로 저장하면 편함
-        const nSeq = [[${rDTO.notice_seq}]];
 
         // HTML로딩이 완료되고, 실행됨
         $(document).ready(function () {

@@ -1,7 +1,6 @@
 package kopo.poly.controller;
 
 import kopo.poly.dto.BookingDTO;
-import kopo.poly.dto.UserInfoDTO;
 import kopo.poly.service.IBookingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -41,20 +40,8 @@ public class BookingController {
 
         String msg = "";
         String url = "/siso/booking";
-
-
-
-
+        
         try {
-
-            // User_info 테이블에서 로그인 정보 가져오기
-            UserInfoDTO userInfoDTO = new UserInfoDTO();
-            userInfoDTO.getUser_name();
-            userInfoDTO.getTel();
-            userInfoDTO.getEmail();
-
-
-
             /* 데이터 입력 */
             String user_id = kopo.poly.Util.CmmUtil.nvl((String) session.getAttribute("SS_USER_ID")); // 로그인 된 사용자 아이디 가져오기
             String same = kopo.poly.Util.CmmUtil.nvl(request.getParameter("same"));
@@ -69,7 +56,6 @@ public class BookingController {
             String local = kopo.poly.Util.CmmUtil.nvl(request.getParameter("local"));
             String foreignn = kopo.poly.Util.CmmUtil.nvl(request.getParameter("foreignn"));
             String want = kopo.poly.Util.CmmUtil.nvl(request.getParameter("want"));
-
 
 
 
