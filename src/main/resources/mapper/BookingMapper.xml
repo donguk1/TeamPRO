@@ -34,6 +34,15 @@
                )
     </insert>
 
+    <!--예약 리스트 쿼리-->
+    <select id="getBookingList" resultType="BookingDTO">
+        SELECT SAME,
+               BOOKING_NAME, TEL, BOOKING_EMAIL,
+               START_DATE, LAST_DATE,
+               STAY, ROOM, PERSON, LOCAL, FOREIGNN, WANT
+        FROM BOOKING
+    </select>
+
     <!-- USER_INFO 테이블 조회 하기 -->
     <select id="selectUser_info" parameterType="BookingDTO">
         SELECT USER_NAME, TEL, EMAIL

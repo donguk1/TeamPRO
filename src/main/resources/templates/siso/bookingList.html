@@ -15,49 +15,19 @@
             })
         })
 
-        // 예약 상세보기 이동
-        function doDetail(seq) {
-            location.href = "/booking/bookingInfo?nSeq=" + seq;
-        }
 
     </script>
 </head>
+
+
 <body>
 <div>
 <h2>나의 예약 리스트
-    <button id="btnReg" type="button" style="display: inline-block; margin: 22px 5px 0; float: right;">예약 화면</button>
+    <button id="btnReg" type="button" style="display: inline-block; margin: 22px 5px 0; float: right;">예약하기</button>
 </h2>
 </div>
 <hr/>
 <br/>
-<div class="divTable minimalistBlack" style="text-align: center">
-    <div class="divTableHeading">
-        <div class="divTableRow" style="text-align: center">
-            <div class="divTableHead" style="text-align: center">순번</div>
-            <div class="divTableHead" style="text-align: center">예약번호</div>
-            <div class="divTableHead" style="text-align: center">등록자</div>
-            <div class="divTableHead" style="text-align: center">등록일</div>
-        </div>
-    </div>
-    <div class="divTableBody">
-
-        <div class="divTableRow" th:each="dto:${rList}">
-
-            <div class="divTableCell"
-                 th:attr="onclick='doDetail(\'' + ${dto.booking_name} + '\')'"
-                 onmouseover="this.style.fontWeight='bold'; this.style.textDecoration='underline'"
-                 onmouseout="this.style.fontWeight='normal'; this.style.textDecoration='none'">
-
-            <div class="divTableCell">[[${dto.user_id}]]
-
-        </div>
-    </div>
-</div>
-
-<div>
-    <br>
-
-</div>
 
 
 </body>

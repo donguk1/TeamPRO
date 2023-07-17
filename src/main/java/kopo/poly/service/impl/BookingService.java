@@ -19,20 +19,19 @@ public class BookingService implements IBookingService {
 
     @Transactional
     @Override
-    public void insertBooking(BookingDTO pDTO) throws Exception { // 예약하기
+    public void insertBooking(BookingDTO pDTO) throws Exception {
 
         /* 함수 접근 확인용 로그 */
         log.info(this.getClass().getName() + ".getInsertBooking Start!");
         log.info("예약 정보 작성 시작");
 
         bookingMapper.insertBooking(pDTO);
-
     }
 
-
     @Override
-    public List<BookingDTO> getBookingList() throws Exception { // 예약리스트
+    public List<BookingDTO> getBookingList() throws Exception {
         log.info(this.getClass().getName() + ".getBookingList start!");
+        log.info("예약 정보 리스트 보기 시작");
         return bookingMapper.getBookingList();
     }
 }

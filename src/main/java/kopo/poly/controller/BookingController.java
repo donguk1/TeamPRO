@@ -1,13 +1,16 @@
 package kopo.poly.controller;
 
 import kopo.poly.dto.BookingDTO;
+import kopo.poly.dto.NoticeDTO;
 import kopo.poly.service.IBookingService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.Request;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,7 +27,7 @@ public class BookingController {
 
     /*  예약화면으로 이동  */
     @GetMapping(value = "/siso/booking")
-    public String booking(ModelMap model) throws Exception{
+    public String booking() {
 
         // 확인용 로그(실행 된건지)
         log.info(this.getClass().getName() + "./siso/booking 예약화면 접속");
@@ -43,7 +46,7 @@ public class BookingController {
         
         try {
             /* 데이터 입력 */
-            String user_id = kopo.poly.Util.CmmUtil.nvl((String) session.getAttribute("SS_USER_ID")); // 로그인 된 사용자 아이디 가져오기
+            String user_id = kopo.poly.Util.CmmUtil.nvl((String) session.getAttribute("SS_USER_ID"));
             String same = kopo.poly.Util.CmmUtil.nvl(request.getParameter("same"));
             String booking_name = kopo.poly.Util.CmmUtil.nvl(request.getParameter("booking_name"));
             String tel = kopo.poly.Util.CmmUtil.nvl(request.getParameter("tel"));
@@ -79,7 +82,6 @@ public class BookingController {
 
             /* 데이터 저장하기 위해 DTO에 저장하기 */
             BookingDTO pDTO = new BookingDTO();
-            pDTO.setUser_id(user_id); // 작성자 추가함
             pDTO.setSame(same);
             pDTO.setBooking_name(booking_name);
             pDTO.setTel(tel);
@@ -96,14 +98,14 @@ public class BookingController {
             /* 예약하기 위한 비즈니스 로직 호출 */
             BookingService.insertBooking(pDTO);
 
-            msg = "접수되었습니다.";
-            url = "/siso/booking";
+            msg = "예약 되었습니다.";
+            url = "/siso/bookingList"; // booking에서 bookingList로 변경
 
 
         } catch (Exception e) {
 
             /* 예약 실패시 사용자에게 보여줄 메시지 */
-            msg = "예약 접수가 실패하였습니다.";
+            msg = "예약 실패하였습니다.";
             log.info(e.toString());
             e.printStackTrace();
 
@@ -123,7 +125,7 @@ public class BookingController {
     }
 
 
-    // 예약 리스트 보여주기
+    /* 예약리스트 */
     @GetMapping(value = "/siso/bookingList")
     public String bookingList(ModelMap model) throws Exception {
 

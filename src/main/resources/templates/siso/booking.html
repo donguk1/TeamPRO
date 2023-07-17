@@ -64,7 +64,7 @@
         function getUserInfo() {
             // 여기에 실제로 로그인된 사용자 정보를 가져와서 반환하는 로직을 구현해야 함!!!!!!!!!!
             return {
-                name: [${dto.user_id}], // 컨트롤러, dto에 user_id 추가 수정해서 일단 유저아이디로 넣어봄
+                name: "김소정",
                 tel: "010-7657-0611",
                 email: "abcd@naver.com"
             };
@@ -78,11 +78,25 @@
         // 페이지 로드 완료 시 initialize 함수 호출
         window.addEventListener("load", initialize);
 
+
+        // HTML로딩이 완료되고, 실행됨   #### 이거 왜 안되지??????
+        $(document).ready(function () {
+
+            // 버튼 클릭했을때, 발생되는 이벤트 생성함(onclick 이벤트와 동일함)
+            $("#btnReg").on("click", function () {
+                location.href = "/siso/bookingList"; // 예약하는 창으로 이동
+            })
+        })
     </script>
 </head>
 
 <body>
-
+<div>
+    <h2>예약하기
+        <button id="btnReg" type="button" style="display: inline-block; margin: 22px 5px 0; float: right;">예약확인</button>
+    </h2>
+</div>
+<hr/>
 <form action="/siso/bookingInsert" method="post" onsubmit="doSubmit()" name="booking" id="booking">
     <fieldset>
         <legend> 예약자(대표) 정보 </legend>
