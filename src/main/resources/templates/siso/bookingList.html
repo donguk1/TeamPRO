@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>예약 리스트</title>
+    <link rel="stylesheet" href="/css/table.css"/>
     <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
 
@@ -22,13 +23,32 @@
 
 <body>
 <div>
-<h2>나의 예약 리스트
-    <button id="btnReg" type="button" style="display: inline-block; margin: 22px 5px 0; float: right;">예약하기</button>
-</h2>
+    <h2>나의 예약 리스트
+        <button id="btnReg" type="button" style="display: inline-block; margin: 22px 5px 0; float: right;">예약하기</button>
+    </h2>
 </div>
 <hr/>
 <br/>
 
+
+<div class="divTable minimalistBlack" style="text-align: center">
+    <div class="divTableHeading">
+        <div class="divTableRow" style="text-align: center">
+            <div class="divTableHead" style="text-align: center">예약번호</div>
+            <div class="divTableHead" style="width: 35%; text-align: center">여행</div>
+            <div class="divTableHead" style="text-align: center">예약자</div>
+            <div class="divTableHead" style="text-align: center">등록일</div>
+        </div>
+    </div>
+    <div class="divTableBody">
+        <div class="divTableRow">
+            <div class="divTableCell">123456789</div> <!-- 예약번호 : 난수 등으로 만들기-->
+            <div class="divTableCell">경북</div> <!-- 여행 : ex) 경상북도 1박2일 2인 -->
+            <div class="divTableCell">김시루</div> <!-- 예약자 -->
+            <div class="divTableCell">2023-07-18</div> <!-- 등록일 : 컬럼 추가해야할듯 -->
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

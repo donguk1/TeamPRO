@@ -23,6 +23,7 @@
 
     </script>
 </head>
+
 <body>
 <div>
 <h2>공지사항
@@ -31,6 +32,9 @@
 </div>
 <hr/>
 <br/>
+
+
+
 <div class="divTable minimalistBlack" style="text-align: center">
     <div class="divTableHeading">
         <div class="divTableRow" style="text-align: center">
@@ -42,7 +46,6 @@
         </div>
     </div>
     <div class="divTableBody">
-
         <div class="divTableRow" th:each="dto:${rList}">
             <!--공지글이라면, '공지' 표시 +)글자 강조 효과 추가 -->
             <div class="divTableCell" th:if="${dto.notice_yn=='Y'}"><strong>공지</strong></div>
